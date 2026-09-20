@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mounika Music Player | CodeAlpha</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-headphones"></i>
+                <span>SoundWave</span>
+            </div>
+
+            <nav class="menu">
+                <a href="#" class="menu-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <a href="#playlist-section" class="menu-item">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Playlist</span>
+                </a>
+
+                <a href="#now-playing" class="menu-item">
+                    <i class="fa-solid fa-music"></i>
+                    <span>Now Playing</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>CodeAlpha Internship</p>
+                <span>Frontend Development</span>
+            </div>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="top-header">
+                <div>
+                    <p class="welcome-text">Welcome back 👋</p>
+                    <h1>Your Music Space</h1>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn" id="themeToggle" title="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+
+            <!-- Music Player -->
+            <section class="player-section" id="now-playing">
+
+                <div class="player-card">
+
+                    <!-- Album Image -->
+                    <div class="album-wrapper">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=600&q=80"
+                            alt="Album Cover" id="albumArt">
+                    </div>
+
+
+                    <!-- Song Details -->
+                    <div class="song-details">
+                        <div class="now-playing-header">
+                            <p class="now-playing-label">NOW PLAYING</p>
+                            <div class="equalizer" id="equalizer">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <h2 id="songTitle">Select a Song</h2>
+                        <p id="songArtist">Your Music, Your Vibe</p>
+
+
+                        <!-- Progress -->
+                        <div class="progress-container">
+                            <input type="range" id="progressBar" min="0" max="100" value="0">
+
+                            <div class="time-info">
+                                <span id="currentTime">0:00</span>
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+
+
+                        <!-- Controls -->
+                        <div class="controls">
+
+                            <button class="control-btn small-btn" id="shuffleBtn" title="Shuffle">
+                                <i class="fa-solid fa-shuffle"></i>
+                            </button>
+
+                            <button class="control-btn" id="prevBtn" title="Previous Song">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </button>
+
+                            <button class="play-btn" id="playBtn" title="Play / Pause">
+                                <i class="fa-solid fa-play" id="playIcon"></i>
+                            </button>
+
+                            <button class="control-btn" id="stopBtn" title="Stop">
+                                <i class="fa-solid fa-stop"></i>
+                            </button>
+
+                            <button class="control-btn" id="nextBtn" title="Next Song">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </button>
+
+                            <button class="control-btn small-btn" id="repeatBtn" title="Repeat">
+                                <i class="fa-solid fa-repeat"></i>
+                            </button>
+
+                        </div>
+
+
+                        <!-- Volume -->
+                        <div class="volume-container">
+
+                            <button id="muteBtn" class="volume-icon-btn">
+                                <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                            </button>
+
+                            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+
+                            <span id="volumeValue">70%</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Playlist -->
+            <section class="playlist-section" id="playlist-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p>YOUR COLLECTION</p>
+                        <h2>Playlist</h2>
+                    </div>
+
+                    <span id="songCount">0 Songs</span>
+                </div>
+
+
+                <div class="playlist-container" id="playlistContainer">
+
+                    <!-- Songs will be added using JavaScript -->
+
+                </div>
+
+            </section>
+
+
+            <!-- Keyboard Shortcuts -->
+            <section class="shortcuts-section">
+
+                <h3>
+                    <i class="fa-solid fa-keyboard"></i>
+                    Keyboard Shortcuts
+                </h3>
+
+                <div class="shortcuts">
+
+                    <div class="shortcut">
+                        <kbd>Space</kbd>
+                        <span>Play / Pause</span>
+                    </div>
+
+                    <div class="shortcut">
+                        <kbd>←</kbd>
+                        <span>Previous Song</span>
+                    </div>
+
+                    <div class="shortcut">
+                        <kbd>→</kbd>
+                        <span>Next Song</span>
+                    </div>
+
+                    <div class="shortcut">
+                        <kbd>M</kbd>
+                        <span>Mute</span>
+                    </div>
+
+                    <div class="shortcut">
+                        <kbd>S</kbd>
+                        <span>Stop</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer"></audio>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
